@@ -17,10 +17,13 @@ public class RecallRVAdapter extends RecyclerView.Adapter<RecallRVAdapter.Recall
 
     public static class RecallViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title;
+        TextView recallID;
 
         RecallViewHolder(View itemView) {
             super(itemView);
             title = (TextView)itemView.findViewById(R.id.recall_title);
+            recallID = (TextView)itemView.findViewById(R.id.recall_id);
+
             itemView.setOnClickListener(this);
         }
         @Override
@@ -62,18 +65,23 @@ public class RecallRVAdapter extends RecyclerView.Adapter<RecallRVAdapter.Recall
     public void onBindViewHolder(RecallViewHolder recallViewHolder, int i) {
         switch (category){
             case "food":
+                recallViewHolder.recallID.setText("Recall ID: " + String.format(results.getResults().getmFood().get(i).getRecallId()));
                 recallViewHolder.title.setText(results.getResults().getmFood().get(i).getTitle());
                 break;
             case "health":
+                recallViewHolder.recallID.setText("Recall ID: " + String.format(results.getResults().getmHealth().get(i).getRecallId()));
                 recallViewHolder.title.setText(results.getResults().getmHealth().get(i).getTitle());
                 break;
             case "vehicle":
+                recallViewHolder.recallID.setText("Recall ID: " + String.format(results.getResults().getmVehicles().get(i).getRecallId()));
                 recallViewHolder.title.setText(results.getResults().getmVehicles().get(i).getTitle());
                 break;
             case "cp":
+                recallViewHolder.recallID.setText("Recall ID: " + String.format(results.getResults().getmConsumerProducts().get(i).getRecallId()));
                 recallViewHolder.title.setText(results.getResults().getmConsumerProducts().get(i).getTitle());
                 break;
             default:
+                recallViewHolder.recallID.setText("Error");
                 recallViewHolder.title.setText("Error fetching recalls");
                 break;
         }
