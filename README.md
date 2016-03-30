@@ -7,7 +7,7 @@ RecallSafety makes use of these excellent libraries:
   -Realm  
   
   
-Demonstrates use of:
+Demonstrates use of:  
   -MVP Architecture (Presenter - View - Interactor)  
   -Simple transitions  
   -RecyclerViews  
