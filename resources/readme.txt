@@ -1,5 +1,4 @@
-Thanks for visiting MaterialDesignIcons.com
-Check back often for new icons and follow @MaterialIcons for updates.
+APP icons from MaterialDesignIcons.com
 
 Icon: bookmark-plus
 By: Austin Andrews
