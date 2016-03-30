@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <FrameLayout
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/scene_root">
-        <include layout="@layout/scene_search" />
-    </FrameLayout>
-
-
-</android.support.design.widget.CoordinatorLayout>
-<!--
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:minWidth="300dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -40,6 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Search term here"
+                    android:imeOptions="actionSearch"
                     android:minWidth="200dp"
                     android:singleLine="true" />
 
@@ -54,15 +42,15 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="4dp"
                     android:text="Category"
-                    android:textSize="14sp"
-                    android:paddingLeft="4dp"/>
+                    android:textSize="14sp" />
 
                 <Spinner
                     android:id="@+id/spinner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="8dp"/>
+                    android:paddingTop="8dp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -73,12 +61,5 @@
             android:background="@color/colorPrimary"
             android:text="Search"
             android:textColor="@android:color/white" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/searchRecycler"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
     </LinearLayout>
-
-</android.support.design.widget.CoordinatorLayout>-->
+</LinearLayout>

@@ -1,4 +1,1 @@
-# recallsafety
-Android project
-
-Assignment 1 for MAP524
+Android APP for looking at recent Recalls issued by Canadian Government Agencies
