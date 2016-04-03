@@ -38,8 +38,6 @@ public class RecallDetailsFragment extends DialogFragment implements IRecallDeta
     TextView detailsTitle;
     @Bind(R.id.detailsStartDate)
     TextView detailsStartDate;
-    @Bind(R.id.detailsDatePublished)
-    TextView detailsDatePublished;
     @Bind(R.id.recallRecycler)
     RecyclerView recallRecycler;
     @Bind(R.id.track_recall)
@@ -118,7 +116,6 @@ public class RecallDetailsFragment extends DialogFragment implements IRecallDeta
 
         detailsTitle.setText(stripHtml(details.getTitle()));
         detailsStartDate.setText(DateFormat.getDateFormat(getContext()).format(new Date(details.getStartDate() * 1000)));
-        detailsDatePublished.setText(DateFormat.getDateFormat(getContext()).format(new Date(details.getDatePublished() * 1000)));
 
         RecallDetailsRVAdapter adapter = new RecallDetailsRVAdapter(details.getPanels(), getActivity());
         recallRecycler.setAdapter(adapter);

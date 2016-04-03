@@ -1,10 +1,13 @@
 package com.example.pande.recallsafety.recalls.search;
 
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.pande.recallsafety.R;
@@ -18,13 +21,14 @@ public class RecallSearchRV extends RecyclerView.Adapter<RecallSearchRV.RecallVi
 
     public static class RecallViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title;
-        TextView recallID;
+        LinearLayout horizontalBar;
+        ImageView icon;
 
         RecallViewHolder(View itemView) {
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.recall_title);
-            recallID = (TextView) itemView.findViewById(R.id.recall_id);
-
+            horizontalBar = (LinearLayout) itemView.findViewById(R.id.horizontal_bar);
+            icon = (ImageView) itemView.findViewById(R.id.recallIcon);
             itemView.setOnClickListener(this);
         }
 
@@ -63,9 +67,33 @@ public class RecallSearchRV extends RecyclerView.Adapter<RecallSearchRV.RecallVi
 
     @Override
     public void onBindViewHolder(RecallViewHolder recallViewHolder, int i) {
+        int category = Integer.parseInt(results.getResults().get(i).getCategory().get(0));
 
-        recallViewHolder.recallID.setText("Recall ID: " + String.format(results.getResults().get(i).getRecallId()));
-        recallViewHolder.title.setText(results.getResults().get(i).getTitle());
+        switch (category){
+            case 1:
+                recallViewHolder.horizontalBar.setBackgroundColor(Color.parseColor("#00E676"));
+                recallViewHolder.icon.setImageResource(R.drawable.food);
+                recallViewHolder.title.setText(results.getResults().get(i).getTitle());
+                break;
+            case 3:
+                recallViewHolder.horizontalBar.setBackgroundColor(Color.parseColor("#F50057"));
+                recallViewHolder.icon.setImageResource(R.drawable.hospital);
+                recallViewHolder.title.setText(results.getResults().get(i).getTitle());
+                break;
+            case 2:
+                recallViewHolder.horizontalBar.setBackgroundColor(Color.parseColor("#00B0FF"));
+                recallViewHolder.icon.setImageResource(R.drawable.car);
+                recallViewHolder.title.setText(results.getResults().get(i).getTitle());
+                break;
+            case 4:
+                recallViewHolder.horizontalBar.setBackgroundColor(Color.parseColor("#E040FB"));
+                recallViewHolder.icon.setImageResource(R.drawable.cart_outline);
+                recallViewHolder.title.setText(results.getResults().get(i).getTitle());
+                break;
+            default:
+                recallViewHolder.title.setText("Error fetching recalls");
+                break;
+        }
     }
 
     @Override

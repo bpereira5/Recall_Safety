@@ -1,41 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp">
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:minHeight="80dp"
+    card_view:cardUseCompatPadding="true">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv"
+
+    <LinearLayout
+        android:id="@+id/horizontal_bar"
+        android:layout_width="25dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/recallIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        card_view:cardCornerRadius="6dp"
-        card_view:cardElevation="30dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="36dp">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/recall_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="8dp"
 
-            <TextView
-                android:id="@+id/recall_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:background="@color/lightPrimaryColor"/>
+            android:maxLines="2"
+            android:textColor="@color/primaryText"
+            android:textSize="16sp"
+            android:textIsSelectable="false"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/recall_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/primaryText"
-                android:padding="8dp"
-                android:background="@color/dividerColors"/>
+    </LinearLayout>
 
+</android.support.v7.widget.CardView>
 
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-</LinearLayout>
