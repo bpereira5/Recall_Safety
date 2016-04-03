@@ -1,4 +1,4 @@
-package com.example.pande.recallsafety;
+package com.bpcoding.pande.recallsafety;
 
 import org.junit.Test;
 
